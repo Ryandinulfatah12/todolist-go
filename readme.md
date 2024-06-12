@@ -22,6 +22,34 @@ Aplikasi ini memungkinkan pengguna untuk membuat, mengubah, menghapus, menandai 
 5. Buatlah database dengan nama `tododb` di MySQL.
 6. Jalankan perintah `go run main.go` untuk memulai server.
 
+## Struktur Database
+
+```sql
+-- tododb.todos definition
+
+CREATE TABLE `todos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) NOT NULL,
+  `completed` tinyint(1) DEFAULT NULL,
+  `deleted` datetime(3) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uni_todos_title` (`title`),
+  KEY `idx_todos_deleted` (`deleted`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- tododb.tasks definition
+
+CREATE TABLE `tasks` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `todo_id` bigint unsigned DEFAULT NULL,
+  `title` longtext,
+  `done` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_todos_tasks` (`todo_id`),
+  CONSTRAINT `fk_todos_tasks` FOREIGN KEY (`todo_id`) REFERENCES `todos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
+
 ## Penggunaan
 
 Setelah menjalankan server, Anda dapat mengakses API menggunakan berbagai metode HTTP seperti POST, GET, PUT, PATCH, dan DELETE. Berikut adalah beberapa contoh penggunaan:
