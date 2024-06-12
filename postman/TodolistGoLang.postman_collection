@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "32925f13-b30b-4257-a7d0-b5e99da97a49",
+		"name": "Todolist - Go Lang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11892521"
+	},
+	"item": [
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Rayen Task 2\",\r\n    \"tasks\": [\r\n        {\r\n            \"title\": \"Task 1\"\r\n        },\r\n        {\r\n            \"title\": \"Task 2\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Todo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Rayen Task 2\",\r\n    \"tasks\": [\r\n        {\r\n            \"title\": \"Task 1\"\r\n        },\r\n        {\r\n            \"title\": \"Task 2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 15:32:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Rayen Task 2\",\n        \"tasks\": [\n            {\n                \"id\": 9,\n                \"todo_id\": 2,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 10,\n                \"todo_id\": 2,\n                \"title\": \"Task 2\",\n                \"done\": false\n            }\n        ],\n        \"completed\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Todos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 15:29:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "389"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Rayen\",\n            \"tasks\": [\n                {\n                    \"id\": 1,\n                    \"todo_id\": 1,\n                    \"title\": \"Task 1\",\n                    \"done\": false\n                },\n                {\n                    \"id\": 2,\n                    \"todo_id\": 1,\n                    \"title\": \"Task 2\",\n                    \"done\": false\n                },\n                {\n                    \"id\": 3,\n                    \"todo_id\": 1,\n                    \"title\": \"Task 1\",\n                    \"done\": false\n                },\n                {\n                    \"id\": 4,\n                    \"todo_id\": 1,\n                    \"title\": \"Task 2\",\n                    \"done\": false\n                },\n                {\n                    \"id\": 5,\n                    \"todo_id\": 1,\n                    \"title\": \"Task 1\",\n                    \"done\": false\n                },\n                {\n                    \"id\": 6,\n                    \"todo_id\": 1,\n                    \"title\": \"Task 2 Update\",\n                    \"done\": false\n                }\n            ],\n            \"completed\": true\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Todo by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Rayen\",\r\n    \"tasks\": [\r\n        {\r\n            \"title\": \"Task 1 Update name\"\r\n        },\r\n        {\r\n            \"title\": \"Task 2 Update name\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Todo by ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Rayen\",\r\n    \"tasks\": [\r\n        {\r\n            \"title\": \"Task 1 Update name\"\r\n        },\r\n        {\r\n            \"title\": \"Task 2 Update name\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 15:29:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Rayen\",\n        \"tasks\": [\n            {\n                \"id\": 7,\n                \"todo_id\": 1,\n                \"title\": \"Task 1 Update name\",\n                \"done\": false\n            },\n            {\n                \"id\": 8,\n                \"todo_id\": 1,\n                \"title\": \"Task 2 Update name\",\n                \"done\": false\n            }\n        ],\n        \"completed\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Complete Todo by ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/todos/1/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						"1",
+						"complete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Complete Todo by ID",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/1/complete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"1",
+								"complete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 15:31:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "513"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Rayen\",\n        \"tasks\": [\n            {\n                \"id\": 1,\n                \"todo_id\": 1,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 2,\n                \"todo_id\": 1,\n                \"title\": \"Task 2\",\n                \"done\": false\n            },\n            {\n                \"id\": 3,\n                \"todo_id\": 1,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 4,\n                \"todo_id\": 1,\n                \"title\": \"Task 2\",\n                \"done\": false\n            },\n            {\n                \"id\": 5,\n                \"todo_id\": 1,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 6,\n                \"todo_id\": 1,\n                \"title\": \"Task 2 Update\",\n                \"done\": false\n            },\n            {\n                \"id\": 7,\n                \"todo_id\": 1,\n                \"title\": \"Task 1 Update name\",\n                \"done\": false\n            },\n            {\n                \"id\": 8,\n                \"todo_id\": 1,\n                \"title\": \"Task 2 Update name\",\n                \"done\": false\n            }\n        ],\n        \"completed\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Todos by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/todos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Todos by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 15:31:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "513"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Rayen\",\n        \"tasks\": [\n            {\n                \"id\": 1,\n                \"todo_id\": 1,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 2,\n                \"todo_id\": 1,\n                \"title\": \"Task 2\",\n                \"done\": false\n            },\n            {\n                \"id\": 3,\n                \"todo_id\": 1,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 4,\n                \"todo_id\": 1,\n                \"title\": \"Task 2\",\n                \"done\": false\n            },\n            {\n                \"id\": 5,\n                \"todo_id\": 1,\n                \"title\": \"Task 1\",\n                \"done\": false\n            },\n            {\n                \"id\": 6,\n                \"todo_id\": 1,\n                \"title\": \"Task 2 Update\",\n                \"done\": false\n            },\n            {\n                \"id\": 7,\n                \"todo_id\": 1,\n                \"title\": \"Task 1 Update name\",\n                \"done\": false\n            },\n            {\n                \"id\": 8,\n                \"todo_id\": 1,\n                \"title\": \"Task 2 Update name\",\n                \"done\": false\n            }\n        ],\n        \"completed\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Todos by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/todos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Todos by ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jun 2024 15:32:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
